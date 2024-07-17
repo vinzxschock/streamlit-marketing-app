@@ -18,7 +18,7 @@ df = pd.read_csv(
 # HEADER
 
 # Title of our app
-st.title("Hello World")
+st.title("HEY Testi")
 
 # Add image
 st.image('hdm-logo.jpg')
