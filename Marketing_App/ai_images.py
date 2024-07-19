@@ -13,13 +13,33 @@ from openai.types import Image, ImagesResponse
 import uuid
 import os
 from dotenv import load_dotenv, find_dotenv
+import requests
+from io import BytesIO
+
 
 # Lade Umgebungsvariablen
 _ = load_dotenv(find_dotenv())
 
+
+
+
+def download_image(url):
+    # Sendet eine GET-Anfrage an die URL
+    response = requests.get(url)
+    # Überprüft, ob die Anfrage erfolgreich war (Status Code 200)
+    if response.status_code == 200:
+        # Gibt die Bytes des Bildes zurück
+        return BytesIO(response.content)
+    
+
+
+
 def generate_image_prompt():
     # Beispiel für eine einfache Prompt-Generierung
-    return "Erstelle ein Bild von: " + st.session_state.user_description
+    return "Erstelle ein Bild von: " + st.session_state.user_description + ";biete 2 Bilder zur Auswahl an."
+
+
+
 
 def app():
     st.title('OpenAI Model')
@@ -65,6 +85,17 @@ def app():
         )
         image_url = image_response.data[0].url
         st.image(image_url)
+
+        # Lade das Bild herunter
+        image_bytes = download_image(image_url)
+        if image_bytes:
+            # Erstelle einen Download-Button für das Bild
+            st.download_button(
+                label="Bild herunterladen",
+                data=image_bytes,
+                file_name="generated_image.png",
+                mime="image/png"
+            )
 
 # Führe die App-Funktion aus, wenn das Skript direkt aufgerufen wird
 if __name__ == "__main__":
