@@ -17,6 +17,7 @@ _ = load_dotenv(find_dotenv())
 from assistant import OPENAI_ASSISTANT
 
 
+
 def app():
     st.title('OpenAI Model')
 

@@ -5,6 +5,7 @@ import ai
 import daten
 import anleitung
 import auftrag
+import ai_images
 
 # To use this app, you need an .env file with the OPENAI API
 # and you need to fill in the ID in the assistant.py file
@@ -16,6 +17,7 @@ PAGES = {
     "Auftrag": auftrag,
     "Daten überprüfen": daten,
     "AI": ai,
+    "AI Images": ai_images,
 }
 
 st.sidebar.title('Navigation')
