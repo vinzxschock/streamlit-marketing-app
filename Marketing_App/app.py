@@ -1,7 +1,6 @@
 import streamlit as st
 import zielgruppe
 import unternehmen
-import ai
 import daten
 import anleitung
 import auftrag
@@ -16,12 +15,20 @@ PAGES = {
     "Unternehmen": unternehmen,
     "Auftrag": auftrag,
     "Daten überprüfen": daten,
-    "AI": ai,
-    "AI Images": ai_images,
+    "AI": ai_images,
 }
 
 st.sidebar.title('Navigation')
-selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
-page = PAGES[selection]
-page.app()
+# Initialisieren der aktuellen Seite im session_state, falls noch nicht gesetzt
+if 'current_page' not in st.session_state:
+    st.session_state.current_page = "Anleitung"
+
+# Erstellen der Buttons für jede Seite
+for page_name in PAGES.keys():
+    if st.sidebar.button(page_name):
+        st.session_state.current_page = page_name
+
+# Anzeigen der aktuellen Seite
+current_page = PAGES[st.session_state.current_page]
+current_page.app()

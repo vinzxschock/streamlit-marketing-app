@@ -75,7 +75,7 @@ def add_user_persona_form(key):
                 "alter": age,
                 "geschlecht": geschlecht,
                 "einkaufsgewohnheiten": einkaufsgewohnheiten,
-                "soziale_medien": [(st.session_state[f"up-{key}-sm-platform-{sm}"], st.session_state[f"up-{key}-sm-time-{sm}"]) for sm in range(social_media_count)],
+                "soziale_medien": [(st.session_state[f"up-{key}-sm-platform-{sm}"], str(st.session_state[f"up-{key}-sm-time-{sm}"]) + " Std.") for sm in range(social_media_count)],
                 "interessen": interests,
                 "werte": werte,
                 "markenpraferenz": markenpraferenz,

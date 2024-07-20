@@ -21,11 +21,12 @@ def app():
     # Variante Firmenlogo
     if variante == "Erstellung eines Logos für die Firma":
         extras_firma = st.text_input("Zusätzliche Anforderungen für das Firmenlogo:")
+        extras_text_firma = st.text_input("Zusätzliche Anforderungen für die Launchkampagne (z.B. Budget):")
         if st.button("Auftrag für Firmenlogo einreichen"):
             # Löschen des Produkt-Dictionaries, falls vorhanden
             st.session_state['A_Produkt'] = {}
             # Hinzufügen der Daten zum Logo-Dictionary
-            st.session_state['A_Logo'] = {'extras_firma': extras_firma}
+            st.session_state['A_Logo'] = {'extras_firma': extras_firma, 'extras_text_firma': extras_text_firma}
             st.success("Ihr Auftrag für ein Firmenlogo wurde eingereicht und gespeichert.")
 
     # Variante Produktlogo
@@ -36,6 +37,7 @@ def app():
         usp = st.text_input("USPs des Produkts:")
         tonalitaet = st.text_area("Tonalität des Produkts:")
         extras_produkt = st.text_input("Zusätzliche Anforderungen für das Produktlogo:")
+        extras_text_produkt = st.text_input("Zusätzliche Anforderungen für die Launchkampagne (z.B. Budget):")
         if st.button("Auftrag für Produktlogo einreichen"):
             # Löschen des Logo-Dictionaries, falls vorhanden
             st.session_state['A_Logo'] = {}
@@ -46,6 +48,7 @@ def app():
                 'preis': preis,
                 'usp': usp,
                 'extras_produkt': extras_produkt,
-                'tonalitaet': tonalitaet
+                'tonalitaet': tonalitaet,
+                'extras_text_produkt': extras_text_produkt
             }
             st.success("Ihr Auftrag für ein Produktlogo wurde eingereicht und gespeichert.")
