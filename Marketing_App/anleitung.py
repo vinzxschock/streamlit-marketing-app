@@ -13,11 +13,11 @@ def app():
     st.title('Nutzungsanleitung')
 
     st.markdown("""
-    ## Willkommen zur Marketing-App!
+    ## Willkommen zu LogoMatch!
 
     Diese App wurde entwickelt, um Ihnen bei der Erstellung von Logos für Ihr Unternehmen oder eine bestimmte Produktreihe Ihres Unternehmens zu helfen. 
     Sie können Informationen über Ihr Unternehmen und Ihre Zielgruppe eingeben, einen Auftrag für ein Logo oder ein Produktlogo definieren und die Auftragsdaten abspeichern.
-    Sie erhalten als Produkt KI-generierte Bilder und Texte für Ihre Marketingzwecke.
+    Sie erhalten als Produkt ein KI generiertes Logo und eine Launchkampagne für Ihr Unternehmen oder Ihre Produktreihe.
                 
     <span style="color:#ff613d;">Hinweis:</span> Bitte geben Sie so viele Informationen wie möglich ein, um die bestmöglichen Ergebnisse zu erzielen. Die App überprüft die Vollständigkeit Ihrer Daten nur grob.
 
@@ -40,18 +40,18 @@ def app():
              
     <h4 style="color:#ff613d;">Auftrag definieren</h4>
 
-    Im Abschnitt "Auftrag" können Sie einen Auftrag für die Erstellung eines Logos für Ihr Unternehmen oder eine Produktreihe definieren. 
-    Geben Sie die erforderlichen Informationen ein und reichen Sie den Auftrag ein.
+    Im Abschnitt "Auftrag" können Sie sich entscheiden ob Sie das Logo und dessen Launchkampagne für Ihr Unternehmen oder eine Produktreihe erstellen möchten.
+    Je nach Ihrer Auswahl können Sie zusätzliche Anforderungen für das Logo und die Launchkampagne eingeben.
 
     <h4 style="color:#ff613d;">Daten überprüfen</h4>
 
     Im Abschnitt "Daten überprüfen" können Sie die eingegebenen Daten überprüfen und gegebenenfalls korrigieren, bevor Sie die KI-generierten Texte generieren.
-    Ihnen wird auch mitgeteilt, ob alle erforderlichen Daten für ein optimales Ergebnis eingegeben wurden.
+    Ihnen wird auch mitgeteilt, ob alle erforderlichen Daten für ein optimales Ergebnis eingegeben wurden. Die Daten können auch als PDF heruntergeladen werden.
 
     <h4 style="color:#ff613d;">AI-Bild- und -Textgenerierung</h4>
 
-    Im Abschnitt "AI" können Sie den für Sie erstellten Prompt in die AI eingeben und die KI-generierten Bilder und Texte erhalten.
+    Im Abschnitt "AI" können Sie den für Sie erstellten Prompt in die AI eingeben und Ihr Logo und Ihre Launchkampagne generieren lassen.
     
 
-    ### Viel Spaß beim Erstellen Ihrer Marketingmaterialien mit der Marketing-App!
+    <h4 style="color:#ff613d;">Viel Spaß beim erstellen Ihrer Logos!</h4>
     """, unsafe_allow_html=True)

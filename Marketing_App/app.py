@@ -18,17 +18,11 @@ PAGES = {
     "AI": ai_images,
 }
 
-st.sidebar.title('Navigation')
+st.sidebar.markdown("<h1 style='text-align: center; color: #ff613d; font-size: 50px;'>LogoMatch</h1>", unsafe_allow_html=True)
+st.sidebar.markdown("<h2 style='text-align: center; font-size: 35px;'>Navigation</h2>", unsafe_allow_html=True)
 
-# Initialisieren der aktuellen Seite im session_state, falls noch nicht gesetzt
-if 'current_page' not in st.session_state:
-    st.session_state.current_page = "Anleitung"
+# Anpassen der Radio-Buttons für die Navigation mit einem zugänglichen Label
+page_selection = st.sidebar.radio("Seitennavigation", list(PAGES.keys()), label_visibility='collapsed')
 
-# Erstellen der Buttons für jede Seite
-for page_name in PAGES.keys():
-    if st.sidebar.button(page_name):
-        st.session_state.current_page = page_name
-
-# Anzeigen der aktuellen Seite
-current_page = PAGES[st.session_state.current_page]
-current_page.app()
+# Anzeigen der aktuellen Seite basierend auf der Auswahl
+PAGES[page_selection].app()
